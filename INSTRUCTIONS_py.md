@@ -35,7 +35,6 @@ You are given a partial class `Elevator`. Your task is to complete the `solve_el
 
 ```python
 from typing import List, Tuple
-from typing import List, Tuple
 
 class Elevator:
     def __init__(self, start_floor: int) -> None:
