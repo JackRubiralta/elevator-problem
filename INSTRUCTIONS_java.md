@@ -117,7 +117,7 @@ public class TestElevator {
         System.out.println("Test 4: Got distance of: " + totalDistance4);
 
         // Test 5: Multiple stops
-        elevator = new Elevator(2);
+        elevator = new Elevator(5);
         List<int[]> people5 = new ArrayList<>(Arrays.asList(new int[]{2, 10}, new int[]{10, 3}, new int[]{5, 12}, new int[]{3, 1}, new int[]{6, 8}, new int[]{8, 2}, new int[]{4, 7}, new int[]{7, 5}, new int[]{12, 1}, new int[]{1, 6}));
         elevator.addPeople(people5);
         int totalDistance5 = elevator.emptyElevator();
