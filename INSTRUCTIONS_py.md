@@ -18,15 +18,6 @@ Your task is to create a Python program that calculates the **total distance** t
 - **Output**: The total number of floors traveled by the elevator to fulfill all requests.
 - **Optimization Goal**: Minimize the total travel distance.
 
-### Example
-
-**Input**:  
-`people = [(1, 5), (6, 2), (4, 3)]`  
-`starting_floor = 3`
-
-**Expected Output**:  
-`Total distance traveled: 12`
-
 ---
 
 ## Class Definition
