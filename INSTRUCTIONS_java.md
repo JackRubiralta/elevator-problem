@@ -18,8 +18,6 @@ Your task is to create a Java program that calculates the **total distance** tra
 - **Output**: The total number of floors traveled by the elevator to fulfill all requests.
 - **Optimization Goal**: Minimize the total travel distance.
 
-### Example
-
 ---
 
 ## Java Class Definition
