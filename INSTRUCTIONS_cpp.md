@@ -92,6 +92,10 @@ public:
         );
     }
 
+    bool isEmpty() const {
+        return peopleWaiting.empty() && peopleInElevator.empty();
+    }
+
     int emptyElevator() {
         // Your code goes here
         return totalMovement;
@@ -104,19 +108,16 @@ public:
 The following test cases evaluate the functionality and correctness of the `Elevator` class in various scenarios. Each test is designed to check if the elevator can successfully pick up and drop off all passengers while minimizing the total travel distance.
 
 ```cpp
-#include <iostream>
-#include <vector>
-#include "Elevator.h" // Assuming the class Elevator is in a header file named "Elevator.h"
-
-using namespace std;
-
 void testElevator() {
     // Test 1: Basic example
     Elevator elevator(3);
-    vector<pair<int, int>> people1 = {{1, 5}, {6, 2}, {4, 3}};
+    vector<pair<int, int>> people1 = {{1, 5}, {6, 2}, {4, 3}, {3, 8}};
     elevator.addPeople(people1);
     int totalDistance1 = elevator.emptyElevator();
     cout << "Test 1: Got distance of: " << totalDistance1 << endl;
+    if (!elevator.isEmpty()) {
+        cout << "Test 1 Failed: Elevator not empty!" << endl;
+    }
 
     // Test 2: All people on the same target floor
     elevator = Elevator(0);
@@ -124,11 +125,17 @@ void testElevator() {
     elevator.addPeople(people2);
     int totalDistance2 = elevator.emptyElevator();
     cout << "Test 2: Got distance of: " << totalDistance2 << endl;
+    if (!elevator.isEmpty()) {
+        cout << "Test 2 Failed: Elevator not empty!" << endl;
+    }
 
     // Test 3: Starting with an empty elevator
     elevator = Elevator(5);
     int totalDistance3 = elevator.emptyElevator();
     cout << "Test 3: Got distance of: " << totalDistance3 << endl;
+    if (!elevator.isEmpty()) {
+        cout << "Test 3 Failed: Elevator not empty!" << endl;
+    }
 
     // Test 4: Single person to drop off
     elevator = Elevator(10);
@@ -136,13 +143,19 @@ void testElevator() {
     elevator.addPeople(people4);
     int totalDistance4 = elevator.emptyElevator();
     cout << "Test 4: Got distance of: " << totalDistance4 << endl;
+    if (!elevator.isEmpty()) {
+        cout << "Test 4 Failed: Elevator not empty!" << endl;
+    }
 
     // Test 5: Multiple stops
     elevator = Elevator(2);
-    vector<pair<int, int>> people5 = {{2, 5}, {5, 2}, {2, 4}};
+    vector<pair<int, int>> people5 = {{2, 10}, {10, 3}, {5, 12}, {3, 1}, {6, 8}, {8, 2}, {4, 7}, {7, 5}, {12, 1}, {1, 6}};
     elevator.addPeople(people5);
     int totalDistance5 = elevator.emptyElevator();
     cout << "Test 5: Got distance of: " << totalDistance5 << endl;
+    if (!elevator.isEmpty()) {
+        cout << "Test 5 Failed: Elevator not empty!" << endl;
+    }
 }
 
 int main() {
