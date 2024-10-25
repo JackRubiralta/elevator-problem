@@ -99,7 +99,7 @@ def test_elevator() -> None:
     print(f"Test 4: Got distance of: {total_distance}")
 
     # Test 5: Multiple stops
-    elevator = Elevator(start_floor=2)
+    elevator = Elevator(start_floor=5)
     elevator.add_people([(2, 10), (10, 3), (5, 12), (3, 1), (6, 8), (8, 2), (4, 7), (7, 5), (12, 1), (1, 6)])
     total_distance = elevator.empty_elevator()
     assert elevator.is_empty(), f"Test 5 Failed: Elevator not empty!"
