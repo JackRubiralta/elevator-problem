@@ -18,15 +18,6 @@ Your task is to create a C++ program that calculates the **total distance** trav
 - **Output**: The total number of floors traveled by the elevator to fulfill all requests.
 - **Optimization Goal**: Minimize the total travel distance.
 
-### Example
-
-**Input**:  
-`people = [(1, 5), (6, 2), (4, 3)]`  
-`startingFloor = 3`
-
-**Expected Output**:  
-`Total distance traveled: 12`
-
 ---
 
 ## C++ Class Definition
