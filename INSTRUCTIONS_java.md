@@ -20,13 +20,6 @@ Your task is to create a Java program that calculates the **total distance** tra
 
 ### Example
 
-**Input**:  
-`people = [(1, 5), (6, 2), (4, 3)]`  
-`startingFloor = 3`
-
-**Expected Output**:  
-`Total distance traveled: 12`
-
 ---
 
 ## Java Class Definition
