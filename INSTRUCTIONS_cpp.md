@@ -139,7 +139,7 @@ void testElevator() {
     }
 
     // Test 5: Multiple stops
-    elevator = Elevator(2);
+    elevator = Elevator(5);
     vector<pair<int, int>> people5 = {{2, 10}, {10, 3}, {5, 12}, {3, 1}, {6, 8}, {8, 2}, {4, 7}, {7, 5}, {12, 1}, {1, 6}};
     elevator.addPeople(people5);
     int totalDistance5 = elevator.emptyElevator();
