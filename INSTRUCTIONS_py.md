@@ -63,6 +63,9 @@ class Elevator:
         self.people_in_elevator.extend(people_to_pick_up)
         self.people_waiting = [(start, destination) for start, destination in self.people_waiting if start != self.current_floor]
 
+    def is_empty(self) -> bool:
+        """Checks if the elevator is empty of all people."""
+        return len(self.people_in_elevator) == 0 and len(self.people_waiting) == 0
 
     def empty_elevator(self) -> int:
         """Goes to each floor and drops off all remaining people."""
@@ -76,43 +79,39 @@ class Elevator:
 The following test cases evaluate the functionality and correctness of the `Elevator` class in various scenarios. Each test is designed to check if the elevator can successfully pick up and drop off all passengers while minimizing the total travel distance. 
 
 ```python
-
 def test_elevator() -> None:
     # Test 1: Basic example
     elevator = Elevator(start_floor=3)
     elevator.add_people([(1, 5), (6, 2), (4, 3), (3, 8)])
     total_distance = elevator.empty_elevator()
-    assert len(elevator.people_in_elevator) == 0 and len(elevator.people_waiting) == 0, f"Test 1 Failed: Elevator not empty!"
+    assert elevator.is_empty(), f"Test 1 Failed: Elevator not empty!"
     print(f"Test 1: Got distance of: {total_distance}")
-
 
     # Test 2: All people on the same target floor
     elevator = Elevator(start_floor=0)
     elevator.add_people([(1, 3), (2, 3), (0, 3)])
     total_distance = elevator.empty_elevator()
-    assert len(elevator.people_in_elevator) == 0 and len(elevator.people_waiting) == 0, f"Test 2 Failed: Elevator not empty!"
+    assert elevator.is_empty(), f"Test 2 Failed: Elevator not empty!"
     print(f"Test 2: Got distance of: {total_distance}")
-
 
     # Test 3: Starting with an empty elevator
     elevator = Elevator(start_floor=5)
     total_distance = elevator.empty_elevator()
-    assert len(elevator.people_in_elevator) == 0 and len(elevator.people_waiting) == 0, f"Test 3 Failed: Elevator not empty!"
+    assert elevator.is_empty(), f"Test 3 Failed: Elevator not empty!"
     print(f"Test 3: Got distance of: {total_distance}")
-
 
     # Test 4: Single person to drop off
     elevator = Elevator(start_floor=10)
     elevator.add_people([(10, 0)])
     total_distance = elevator.empty_elevator()
-    assert len(elevator.people_in_elevator) == 0 and len(elevator.people_waiting) == 0, f"Test 4 Failed: Elevator not empty!"
+    assert elevator.is_empty(), f"Test 4 Failed: Elevator not empty!"
     print(f"Test 4: Got distance of: {total_distance}")
 
     # Test 5: Multiple stops
     elevator = Elevator(start_floor=2)
     elevator.add_people([(2, 10), (10, 3), (5, 12), (3, 1), (6, 8), (8, 2), (4, 7), (7, 5), (12, 1), (1, 6)])
     total_distance = elevator.empty_elevator()
-    assert len(elevator.people_in_elevator) == 0 and len(elevator.people_waiting) == 0, f"Test 5 Failed: Elevator not empty!"
+    assert elevator.is_empty(), f"Test 5 Failed: Elevator not empty!"
     print(f"Test 5: Got distance of: {total_distance}")
 
 # Run the tests
