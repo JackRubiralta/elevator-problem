@@ -80,7 +80,7 @@ The following test cases evaluate the functionality and correctness of the `Elev
 def test_elevator() -> None:
     # Test 1: Basic example
     elevator = Elevator(start_floor=3)
-    elevator.add_people([(1, 5), (6, 2), (4, 3)])
+    elevator.add_people([(1, 5), (6, 2), (4, 3), (3, 8)])
     total_distance = elevator.empty_elevator()
     assert len(elevator.people_in_elevator) == 0 and len(elevator.people_waiting) == 0, f"Test 1 Failed: Elevator not empty!"
     print(f"Test 1: Got distance of: {total_distance}")
@@ -110,7 +110,7 @@ def test_elevator() -> None:
 
     # Test 5: Multiple stops
     elevator = Elevator(start_floor=2)
-    elevator.add_people([(2, 5), (5, 2), (2, 4)])
+    elevator.add_people([(2, 10), (10, 3), (5, 12), (3, 1), (6, 8), (8, 2), (4, 7), (7, 5), (12, 1), (1, 6)])
     total_distance = elevator.empty_elevator()
     assert len(elevator.people_in_elevator) == 0 and len(elevator.people_waiting) == 0, f"Test 5 Failed: Elevator not empty!"
     print(f"Test 5: Got distance of: {total_distance}")
